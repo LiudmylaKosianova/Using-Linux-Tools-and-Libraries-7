@@ -8,8 +8,9 @@ Your job is to complete the given program by filling in the function prototypes,
 #include <stdio.h>
 
 // insert prototype for function ftoc() here
-
+double ftoc(int x);
 // insert prototype for function ctof() here
+double ctof(int x);
 
 
 int main(void) {
@@ -22,16 +23,16 @@ int main(void) {
     if (unit=='C'){
         // insert function call here to convert usertemp 
            /* from Celsius to Fahrenheit and store the result in convertedtemp */
-
+        convertedtemp = ctof(usertemp);
         // complete this line to print out the conversion result
-
+        printf("%.1lf F", convertedtemp);
     } else if (unit=='F'){
 
         // insert function call here to convert usertemp 
            /* from Fahrenheit to Celsius and store the result in convertedtemp */
-        
+        convertedtemp = ftoc(usertemp);
         // complete this line to print out the conversion result
-        
+        printf("%.1lf C",convertedtemp);
     }
 
     return 0;
