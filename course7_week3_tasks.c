@@ -45,3 +45,33 @@ avarage = avarage/N;
 printf("%.2lf", avarage);
 
 return 0;}
+
+/*TASK 3
+You are still teaching a class on C-programming! You would like to find out whether the students in your class did better on the most 
+recent assignment than the students in your colleagues' classes. The average grades of all these classes are stored in a file called "gradeComparison.txt". The first number stored in the file represents the average grade of the students in your class. All of the subsequent numbers represent the average grades of students from other sections. 
+Your job is to find out whether the students in your class did better than the students in the other classes and if so, print out the word "Yes". 
+If on the other hand students in another class did better than your students then you should print out "No", followed by one space, 
+followed by the number of the first class in the file that had a better grade average.
+*/
+
+#include <stdio.h>
+
+int main (void){
+FILE *file;
+file = fopen("gradeComparison.txt", "r");
+int i=0;
+double myGrade, max, otherGrade;
+fscanf(file, "%lf", &myGrade);
+max = myGrade;
+while (fscanf(file,"%lf", &otherGrade)!= EOF){
+i++;
+//printf (" %d is grade %.2lf \n", i, otherGrade);
+	if(otherGrade > max){
+	max=otherGrade;
+	break;}	 
+}
+if (max==myGrade){
+printf("Yes");}else{
+printf("No %d", i+1);}
+return 0;}
+ 
